@@ -1,0 +1,45 @@
+//declarar variáveis
+let centerSize= 30;
+let petSize = 30;
+let petNum = 6;
+
+function setup() {
+  createCanvas(400, 400);
+  noStroke();
+	angleMode(DEGREES);
+}
+
+function draw() {
+		background('white');
+	//condicional para que as flores só surjam quando o mouse for pressionado
+	if (mouseIsPressed == true) {
+	//noFill();
+		flower('purple', 'white', 'brown',width/2,height/2 );
+	  flower('yellow', 'white', 'pink',width/2 -100,height/2 -100 );
+	  flower('pink', 'white', 'orange',width/2 ,height/2 +120 );
+		flower('blue', 'white', 'red',width/2 +100,height/2 -100 );
+			  		}
+}
+	 //função para desenhar as flores
+  // c1 é a cor 1, stroke é o contorno e c2 a cor 2. xPos e yPos são as posições das floes no canvas 
+ 	
+function flower (c1,stroColor,c2,xPos,yPos) {
+		push();
+	translate(xPos,yPos);
+	fill(c1);
+		ellipse(0,0, centerSize);
+	//Pétalas das flores
+	for (let i= 0; i<petNum; i++){
+			angle = 60;
+		//rotação para formar as flores com as outras elipses
+		rotate(angle);
+		stroke(stroColor);
+		fill(c2);
+		ellipse(30, 0, petSize);
+				}
+	pop();
+	}
+function mousePressed() {	
+}
+
+// 
